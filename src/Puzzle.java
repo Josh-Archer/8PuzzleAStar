@@ -1,5 +1,7 @@
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -10,15 +12,13 @@ public class Puzzle {
 	static int steps = 0;
 	//static ArrayList<Graph> frontier = new ArrayList<Graph>();
 	static PriorityQueue<Graph> frontier = new PriorityQueue<Graph>();
-	static double t  = 0;
-	static double t2 = 0;
 	
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 		ArrayList<Node> nodeList = new ArrayList<Node>();	
 		
 		//need to change to args[0]
-		//File file = new File("/Users/Archer/Downloads/test3_0.txt");
-		File file = new File(args[0]);
+		File file = new File("/Users/Archer/Downloads/test3_0.txt");
+		//File file = new File(args[0]);
 		Scanner input = new Scanner(file);
 		int i = 0, x = 0, j = 0;
 		
@@ -127,9 +127,15 @@ public class Puzzle {
 			stack.push(graph);
 			graph = graph.parent;
 		}
+
+		BufferedWriter log = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		while(!stack.isEmpty())
-			System.out.println(stack.pop().toString());
+		while(!stack.isEmpty()) {
+			//System.out.println(stack.pop().toString());
+	        	log.write(stack.pop().toString());
+		}
+
+        log.flush();
 		
 	}
 
@@ -240,20 +246,19 @@ public class Puzzle {
 			int i = 0;
 			for (Node n2 : graph.nodes) {
 				if (n2.num != graph.nodeChanged) {
-					if (n2.current == 5 ) {
+					if (n2.current == 5) {
 						base.connections.add(n2);
 						i++;
 					} else if (n2.current == 7) {
 						base.connections.add(n2);
 						i++;
 					}
-					if (i == 2) {break;}
+					if (i == 2) {
+						break;
+					}
 				}
 			}
 		}
-		
-		double stop = System.nanoTime();
-		t += (double)(stop - start)/1000000000.0;
 	}
 
 }
