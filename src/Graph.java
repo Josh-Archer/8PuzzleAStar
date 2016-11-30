@@ -8,7 +8,6 @@ public class Graph implements Comparable<Graph> {
 	int f = 0;
 	int h = 0;
 	int nodeChanged;
-	double time = 0;
 	
 	ArrayList<Node> nodes = new ArrayList<Node>();
 	
@@ -49,7 +48,7 @@ public class Graph implements Comparable<Graph> {
 		return null;
 	}
 	
-	public void findF() {
+	public void findF() {		
 		f = steps + h;
 	}
 	
@@ -82,171 +81,170 @@ public class Graph implements Comparable<Graph> {
 		for (Node n : nodes) {
 			if (n.current == 0) {
 				if (n.goal == 1) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 2) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 3) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 4) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 5) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 6) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 7) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 8) {
-					h +=4;
+					h += 8;
 				} 
 			} else if(n.current == 1) {
 				if (n.goal == 0) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 2) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 3) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 4) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 5) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 6) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 7) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 8) {
-					h +=3;
+					h += 5;
 				} 
 				
 			} else if(n.current == 2) {
 				if (n.goal == 0) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 1) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 3) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 4) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 5) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 6) {
-					h +=4;
+					h += 8;
 				} else if (n.goal == 7) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 8) {
-					h +=2;
+					h += 4;
 				} 
 			} else if(n.current == 3) {
 				if (n.goal == 0) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 1) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 2) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 4) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 5) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 6) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 7) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 8) {
-					h +=3;
+					h += 5;
 				} 
 				
 			} else if(n.current == 4) {
 				if (n.goal == 0) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 1) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 2) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 3) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 5) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 6) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 7) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 8) {
-					h +=2;
+					h += 2;
 				} 
 			} else if(n.current == 5) {
 				if (n.goal == 0) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 1) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 2) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 3) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 4) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 6) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 7) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 8) {
-					h +=1;
+					h += 1;
 				} 		
 			} else if(n.current == 6) {
 				if (n.goal == 0) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 1) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 2) {
-					h +=4;
+					h += 8;
 				} else if (n.goal == 3) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 4) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 5) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 7) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 8) {
-					h +=2;
+					h += 4;
 				} 
 				
 			} else if(n.current == 7) {
 				if (n.goal == 0) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 1) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 2) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 3) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 4) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 5) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 6) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 8) {
-					h +=1;
+					h += 1;
 				}
 			} else if(n.current == 8) {
 				if (n.goal == 0) {
-					h +=4;
+					h += 8;
 				} else if (n.goal == 1) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 2) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 3) {
-					h +=3;
+					h += 5;
 				} else if (n.goal == 4) {
-					h +=2;
+					h += 2;
 				} else if (n.goal == 5) {
-					h +=1;
+					h += 1;
 				} else if (n.goal == 6) {
-					h +=2;
+					h += 4;
 				} else if (n.goal == 7) {
-					h +=1;
+					h += 1;
 				}
 			}
-			time = (double) (System.nanoTime() - start)/1000000000.0;
 			//linearConflict(n);
 		}
 		//System.out.println("Time to complete: " + (double)(System.nanoTime() - s)/1000000000.0 + " seconds");

@@ -17,7 +17,8 @@ public class Puzzle {
 		ArrayList<Node> nodeList = new ArrayList<Node>();	
 		
 		//need to change to args[0]
-		File file = new File("/Users/Archer/Downloads/test3_0.txt");
+		//File file = new File("/Users/Archer/Downloads/test3_0.txt");
+		File file = new File(args[0]);
 		Scanner input = new Scanner(file);
 		int i = 0, x = 0, j = 0;
 		
@@ -48,7 +49,6 @@ public class Puzzle {
 				}
 			}
 		}
-		double stopInput = System.nanoTime();
 		
 		//set the original graph
 		Graph graph = new Graph(nodeList);
@@ -96,11 +96,8 @@ public class Puzzle {
 				t.parent = graph;
 				
 				//t.findG();
-				double s = System.nanoTime();
 				t.findH();
 				t.findF();
-				double st = System.nanoTime();
-				t2 += (double)(st - s)/1000000000.0;
 				
 				//store in frontier with graph
 				//if (t.f < 35)
@@ -123,10 +120,7 @@ public class Puzzle {
 			//System.out.println(graph.toString());
 		}
 		double stop = System.nanoTime();
-		System.out.println("Time to complete: " + (double)(stop - start)/1000000000.0 + " seconds");
-		System.out.println("Time to read input: " + (stopInput - start)/1000000000.0);
-		System.out.println("Time to find moves: " + t);
-		System.out.println("Time for finding f and switching nodes: " + t2);
+		System.out.println("Time to complete (without printing): " + (double)(stop - start)/1000000000.0 + " seconds");
 		//finished a star
 		Stack<Graph> stack = new Stack<Graph>();
 		while(graph.parent != null) {
